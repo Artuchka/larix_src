@@ -1,7 +1,7 @@
 import "../styles/index.scss"
 
-// import "./_header"
-// import "./_accordion"
+import "./_header"
+import "./_accordion"
 
 import { updateSearch } from "./_searchField"
 import { setUpModalButtons } from "./_modal"
