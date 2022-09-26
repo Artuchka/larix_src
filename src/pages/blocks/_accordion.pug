@@ -21,16 +21,16 @@ mixin accordion_list(_array, level)
                         +accordion_list(typeValue.types, level+1)
 
 
-//- mixin accordionInfo(_array)
-//-     .accordion(data-accordion)
-//-         +accordion_list(_array)
+mixin accordionInfo(_array)
+    .accordion(data-accordion)
+        +accordionInfo_list(_array)
 
-//- mixin accordionInfo_list(_array)
-//-     .accordion__list
-//-         each typeValue in _array
-//-             .accordion__item(data-after=infoStyleUnfold, data-after-fold=infoStyleFold)
-//-                 label.label(for=typeValue.title)
-//-                     input(type='checkbox', id=typeValue.title) 
-//-                     span= typeValue.title
-//-                     +infoCard(typeValue.imgSrc, typeValue.text)
+mixin accordionInfo_list(_array)
+    .accordion__list
+        each typeValue in _array
+            .accordion__item(data-after=infoStyleUnfold, data-after-fold=infoStyleFold)
+                label.label(for=typeValue.title)
+                    input(type='checkbox', id=typeValue.title) 
+                    span= typeValue.title
+                    +infoCard(typeValue.imgSrc, typeValue.text)
                     
