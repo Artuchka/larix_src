@@ -1,0 +1,17 @@
+mixin modal()
+    .modal__bg(data-modal-bg)
+    .modal(data-modal) 
+        +image('modal/main.png')
+        form.form 
+            .form__close(data-close-modal-btn)
+                span 
+                span 
+            .form__title Заполните форму и  мы поможем вам с покупкой
+            .form__input-container
+                input.form__input(type='text', placeholder='Имя' )
+                input.form__input(type='tel', placeholder='Телефон' )
+                input.form__input(type='email', placeholder='E-mail' )
+                textarea.form__textarea(placeholder='Ваш комментарий')
+            +button('отправить', 'button--half button--padding', '#', 'submit')
+    +notification()
+            

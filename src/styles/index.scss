@@ -1,0 +1,10 @@
+@import "./blocks/default";
+
+body {
+	background-color: rgb(193, 193, 193);
+}
+.sidebar {
+	width: 50vw;
+	max-width: 400px;
+	min-width: 250px;
+}
