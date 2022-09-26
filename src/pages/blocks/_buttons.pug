@@ -1,7 +1,0 @@
-mixin button(_text='click me', _classes='button', _href='#', _type)
-    button.button(class=_classes, type=_type)
-        a(href=_href)= _text
-        
-mixin button(_text, _isModal)
-    button.button( data-modal-open-btn)
-        a(href=_href)= _text
