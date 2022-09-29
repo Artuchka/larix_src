@@ -55,6 +55,58 @@ block contentVars
                 value: 'От 8000 ₽/м3',
             },
         ]
+    -
+        const sizeList = [
+            {
+                width: 100,
+                height: 100,
+            },
+            {
+                width: 100,
+                height: 100,
+            },
+            {
+                width: 100,
+                height: 100,
+            },
+            {
+                width: 100,
+                height: 100,
+            },
+            {
+                width: 100,
+                height: 100,
+                isAvailable: false,
+            },
+        ]
+    -
+        const productTable = {
+            headers: [
+                'Размер',
+                'Порода дерева',
+                'Сорт',
+                'Стоимость за куб',
+                ' ',
+            ],
+            data: [
+                {
+                    size: '100х100х6000',
+                    name: 'Лиственница',
+                    sort: '1 - 2',
+                    price: '18 500 ₽',
+                    buttonText: 'Заказать',
+                },
+                {
+                    size: '100х100х6000',
+                    name: 'Лиственница',
+                    sort: '1 - 2',
+                    price: '18 500 ₽',
+                    buttonText: 'Заказать',
+                },
+            ]
+        }
+
+
 block content 
     .workspace 
         aside.sidebar
@@ -73,5 +125,17 @@ block content
                                 .property__value= property.value
                     .desc__tip Цены и наличие продукции на складе уточняйте дополнительно
                     +button('Уточнить наличие и стоимость', 'button--half product-card__button')
-                            
+
+            .product-sizes
+                .title Доступные размеры:
+                ul.sizes-list 
+                    each size in sizeList 
+                        if (size.isAvailable == undefined)
+                            li.size= `${size.height} x ${size.width}`
+                        else if (size.isAvailable == false)
+                            li.size.dark= `${size.height} x ${size.width}`
+
+            .product-table 
+                +table(productTable)
+
           

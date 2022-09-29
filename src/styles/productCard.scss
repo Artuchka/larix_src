@@ -12,6 +12,7 @@
 	&-card {
 		display: flex;
 		gap: 2rem;
+		margin-bottom: 3rem;
 		&__image {
 			img {
 				width: 100%;
@@ -68,6 +69,30 @@
 			a {
 				text-transform: none;
 				font-weight: normal;
+			}
+		}
+	}
+
+	&-sizes {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		box-shadow: 0 10px 15px 0 rgba(126, 126, 126, 0.746);
+		border-radius: 0.5em;
+		padding: 1rem;
+		.sizes-list {
+			display: flex;
+			align-items: center;
+			list-style: none;
+			gap: 1rem;
+			.size {
+				background-color: black;
+				color: white;
+				border-radius: 0.8em;
+				padding: 0.5em 0.7em;
+				&.dark {
+					background-color: gray;
+				}
 			}
 		}
 	}
