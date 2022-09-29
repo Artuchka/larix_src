@@ -15,15 +15,20 @@ module.exports = {
 	},
 	entry: {
 		index: "./src/scripts/index.js",
-		header: "./src/scripts/_header.js",
-		accordion: "./src/scripts/_accordion.js",
+		catalog: "./src/scripts/catalog.js",
+		libs: "./src/scripts/libs.js",
 	},
 	plugins: [
 		new cssPlugin(),
 		new htmlPlugin({
 			template: "./src/pages/index.pug",
 			filename: "index.html",
-			chunks: ["index"],
+			chunks: ["index", "libs"],
+		}),
+		new htmlPlugin({
+			template: "./src/pages/catalog.pug",
+			filename: "catalog.html",
+			chunks: ["catalog", "libs"],
 		}),
 	],
 	devServer: {

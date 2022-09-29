@@ -1,0 +1,78 @@
+extends blocks/_layout
+
+block contentVars 
+    -
+        const sidebarList = [
+            {
+                title: 'Брус обрезной', 
+                types: [
+                    {
+                        title: 'Брус сухой обрезной',
+                        types: [
+                            {title: 'new type1'},
+                            {title: 'new type2'},
+                            {title: 'new type3'}
+                        ]
+                    },
+                    {title: 'Брус сухой строганый'},
+                    {title: 'Брус строганый'},
+                    {title: 'Брус клееный'},
+                    {title: 'Брус профилированный'},
+                    {title: 'Профбрус камерной сушки'},
+                ]
+            },
+            {
+                title: 'Доска',
+                types: [
+                    {title: 'Брус сухой обрезной'},
+                    {title: 'Брус сухой строганый'},
+                    {title: 'Брус строганый'},
+                    {title: 'Брус клееный'},
+                    {title: 'Брус профилированный'},
+                    {title: 'Профбрус камерной сушки'}
+                    ]
+            },
+            {title: 'Брусок'},
+            {title: 'Фанера'},
+            {title: 'Фасадный планкен'},
+        ]
+    -
+        const discountList = [
+            {
+                title: 'Доска сухая',
+                type: 'Лиственница',
+                price: 9000,
+            },
+            {
+                title: 'Доска сухая',
+                type: 'Лиственница',
+                price: 9000,
+            },
+            {
+                title: 'Доска сухая',
+                type: 'Лиственница',
+                price: 9000,
+            },
+            {
+                title: 'Доска сухая',
+                type: 'Лиственница',
+                price: 9000,
+            },
+        ]
+        const discountImageSrc = 'products/1.png'
+block content
+    .text-content
+        .title Наша продукция
+        .subtitle Компания «Лиственница опт» предлагает купить пиломатериалы со склада производителя, оптом и в розницу, доску обрезную, брус, вагонку, блок-хаус, фанеру, дешево, с доставкой своим спецавтопарком по Москве и Московской области.
+
+    .workspace
+        aside.sidebar
+            +accordion(sidebarList)
+        .products-grid 
+            each times in [1,2,3,4,5,6] 
+                each card in discountList
+                    +card(discountImageSrc, card.title, card.type, card.price, false)   
+    
+          
+
+        
