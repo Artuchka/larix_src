@@ -16,6 +16,7 @@ module.exports = {
 	entry: {
 		index: "./src/scripts/index.js",
 		catalog: "./src/scripts/catalog.js",
+		productCard: "./src/scripts/productCard.js",
 		libs: "./src/scripts/libs.js",
 	},
 	plugins: [
@@ -29,6 +30,11 @@ module.exports = {
 			template: "./src/pages/catalog.pug",
 			filename: "catalog.html",
 			chunks: ["catalog", "libs"],
+		}),
+		new htmlPlugin({
+			template: "./src/pages/productCard.pug",
+			filename: "productCard.html",
+			chunks: ["productCard", "libs"],
 		}),
 	],
 	devServer: {

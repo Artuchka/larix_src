@@ -1,4 +1,4 @@
-mixin card(_imgSrc='', _title='Доска обрезная', _type='Лиственница', _price=9000, hasDiscount)
+mixin card(_imgSrc='', _title='Доска обрезная', _type='Лиственница', _price=9000, hasDiscount, _href)
     .card 
         +image(_imgSrc, 'card__image')
         
@@ -7,6 +7,6 @@ mixin card(_imgSrc='', _title='Доска обрезная', _type='Листве
         .card__flexy
             .card__price= _price
             .card__actions 
-                +button('Перейти', 'button--full')
+                +button('Перейти', 'button--full', _href)
                 if (hasDiscount)
                     span.discount -20%

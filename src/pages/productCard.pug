@@ -37,46 +37,40 @@ block contentVars
             {title: 'Фасадный планкен'},
         ]
     -
-        const discountList = [
+        const productProperties = [
             {
-                title: 'Доска сухая',
-                type: 'Лиственница',
-                price: 9000,
-                href: 'productCard.html'
+                name: 'Порода дерева',
+                value: 'Лиственница',
             },
             {
-                title: 'Доска сухая',
-                type: 'Лиственница',
-                price: 9000,
-                href: 'productCard.html'
+                name: 'Сорт древесины',
+                value: '1-2 ГОСТ 8486-86',
+            },
+            { 
+                name: 'Влажность',
+                value: 'Cухая',
             },
             {
-                title: 'Доска сухая',
-                type: 'Лиственница',
-                price: 9000,
-                href: 'productCard.html'
-            },
-            {
-                title: 'Доска сухая',
-                type: 'Лиственница',
-                price: 9000,
-                href: 'productCard.html'
+                name: 'Стоимость',
+                value: 'От 8000 ₽/м3',
             },
         ]
-        const discountImageSrc = 'products/1.png'
-block content
-    .text-content
-        .title Наша продукция
-        .subtitle Компания «Лиственница опт» предлагает купить пиломатериалы со склада производителя, оптом и в розницу, доску обрезную, брус, вагонку, блок-хаус, фанеру, дешево, с доставкой своим спецавтопарком по Москве и Московской области.
-
-    .workspace
+block content 
+    .workspace 
         aside.sidebar
             +accordion(sidebarList)
-        .products-grid 
-            each times in [1,2,3,4,5,6] 
-                each card in discountList
-                    +card(discountImageSrc, card.title, card.type, card.price, false, `http://localhost:8080/${card.href}`)   
-    
+        .product 
+            .prouct-card 
+                .product-card__image
+                    +image('products/3.png')
+                .product-card__desc 
+                    h2.desc__name Брус сухой обрезной
+                    ul.desc__list
+                        each property in productProperties
+                            li.property 
+                                .property__name= property.name 
+                                .property__value= property.value
+                    .desc__tip Цены и наличие продукции на складе уточняйте дополнительно
+                    +button('Уточнить наличие и стоимость', '#','btn--full')
+                            
           
-
-        
