@@ -60,7 +60,7 @@ block content
         aside.sidebar
             +accordion(sidebarList)
         .product 
-            .prouct-card 
+            .product-card 
                 .product-card__image
                     +image('products/3.png')
                 .product-card__desc 
@@ -69,8 +69,9 @@ block content
                         each property in productProperties
                             li.property 
                                 .property__name= property.name 
+                                .property__dots
                                 .property__value= property.value
                     .desc__tip Цены и наличие продукции на складе уточняйте дополнительно
-                    +button('Уточнить наличие и стоимость', '#','btn--full')
+                    +button('Уточнить наличие и стоимость', 'button--half product-card__button')
                             
           
