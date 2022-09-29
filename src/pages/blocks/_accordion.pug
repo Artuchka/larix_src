@@ -22,15 +22,15 @@ mixin accordion_list(_array, level)
 
 
 mixin accordionInfo(_array)
-    .accordion(data-accordion)
+    .accordion.accordion-info(data-accordion)
         +accordionInfo_list(_array)
 
 mixin accordionInfo_list(_array)
-    .accordion__list
+    .accordion__list.accordion-info__list
         each typeValue in _array
-            .accordion__item(data-after=infoStyleUnfold, data-after-fold=infoStyleFold)
+            .accordion__item
                 label.label(for=typeValue.title)
                     input(type='checkbox', id=typeValue.title) 
-                    span= typeValue.title
+                    span(data-after-unfold=infoStyleUnfold, data-after-fold=infoStyleFold)= typeValue.title
                     +infoCard(typeValue.imgSrc, typeValue.text)
                     

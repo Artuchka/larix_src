@@ -18,7 +18,6 @@ export function setUpModalButtons(documentElement) {
 	)
 
 	modalButtons.forEach((btn) => btn.addEventListener("click", openModal))
-	console.log(documentElement)
 }
 
 function openModal() {

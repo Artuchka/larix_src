@@ -1,6 +1,5 @@
 mixin card(_imgSrc='', _title='Доска обрезная', _type='Лиственница', _price=9000, hasDiscount)
     .card 
-        //- img.card__image(src=_imgSrc) 
         +image(_imgSrc, 'card__image')
         
         .card__title= _title

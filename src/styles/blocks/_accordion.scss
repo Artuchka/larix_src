@@ -38,4 +38,44 @@
 			}
 		}
 	}
+
+	.accordion-info {
+		&__list {
+			.accordion__item {
+				.info-card {
+					max-height: 0;
+					transition: all 0.35s;
+
+					& > * {
+						max-height: 0;
+						display: none;
+						transition: all 0.35s;
+					}
+				}
+				span {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+			}
+			input {
+				& ~ span::after {
+					font-size: 2rem;
+					content: "afdsfasdf";
+					content: attr(data-after-unfold);
+				}
+				&:checked ~ span::after {
+					content: attr(data-after-fold);
+				}
+				&:checked ~ .info-card {
+					max-height: 100vh;
+
+					& > * {
+						display: block;
+						max-height: 100vh;
+					}
+				}
+			}
+		}
+	}
 }
