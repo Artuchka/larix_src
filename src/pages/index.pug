@@ -55,7 +55,7 @@ block contentVars
             {title: 'Фасадный планкен'},
         ]
     -
-        const properyList = [
+        const propertyList = [
             {
                 title: 'Прочность древесины',
                 text: 'Лиственница имеет уникальную прочность и твёрдость, возрастающую со временем.'
@@ -110,46 +110,47 @@ block contentVars
         ]
         const discountImageSrc = 'products/1.png'
 block content
-    .titles 
-        h1.title Лиственница опт
-        h3.subtitle Москва и Московская  область
-    .desc Погонажные изделия из Сибирской лиственницы оптом
-    .showcase 
-        +image('showcase.png')
+    .hello-section
+        .titles 
+            h1.title Лиственница #[span опт]
+            h3.subtitle Москва и Московская  область
+        .desc Погонажные изделия из Сибирской лиственницы оптом
+        .showcase 
+            +image('showcase.png')
     
     section.section.section-about 
         h2.section__title О компании
         .content
             p.section__text Хвойные деревья семейства сосновых давно зарекомендовали себя фаворитами в строительной сфере. Купить продукцию из лиственницы стремятся многие строительные организации и частные лица. Высота этих деревьев достигает 45 метров, а диаметр прямостоящего столба более 1 метра. Востребованность этой породы обусловлена её приемлемой ценой и качественными характеристиками:
             +image('about.png','section__image')
-            +link('Узнать больше', '#')
+            +link('Узнать больше', '#', 'section__link')
     
     section.section.section-types 
-        h2.section__title лиственница премиального качества
+        h2.section__title лиственница #[span премиального] #[span качества]
         +accordionInfo(typesList)
     
     section.section.section-properties 
-        h2.section__title Удивительные свойства лиственницы
-        each property in properyList 
-            .property 
-                h3.property__title= property.title
-                p.property__text= property.text
+        h2.section__title Удивительные #[span.not-colored свойства] #[span лиственницы]
+        .property-list
+            each property in propertyList 
+                .property 
+                    h3.property__title= property.title
+                    p.property__text= property.text
     
     section.section.section-services 
         h2.section__title Услуги
-        each service, index in servicesList 
-            .service
-                +image(`${servicesImageSrc}/${index+1}.png`, 'service__image')
-                h3.service__title= service.title
+        .service-list 
+            each service, index in servicesList 
+                .service
+                    +image(`${servicesImageSrc}/${index+1}.png`, 'service__image')
+                    h3.service__title= service.title
     
     section.section.section-discount 
         h2.section__title Акции
         .discount-items
             each card in discountList
-                +card(discountImageSrc, card.title, card.type, card.price, false)
-
-                //- _imgSrc='', _title='Доска обрезная', _type='Лиственница', _price=9000, hasDiscount    
-        +link('Смотреть все', '#')
+                +card(discountImageSrc, card.title, card.type, card.price, false)   
+        +link('Смотреть все', '#', 'section__link')
     
     section.section.section-special
         h2.section__title Есть вопросы?

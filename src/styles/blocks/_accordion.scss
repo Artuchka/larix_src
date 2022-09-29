@@ -42,6 +42,11 @@
 	.accordion-info {
 		&__list {
 			.accordion__item {
+				&:first-child {
+					border-top: 2px solid gray;
+				}
+				border-bottom: 2px solid gray;
+				padding: 0.6rem 2rem;
 				.info-card {
 					max-height: 0;
 					transition: all 0.35s;
@@ -61,7 +66,6 @@
 			input {
 				& ~ span::after {
 					font-size: 2rem;
-					content: "afdsfasdf";
 					content: attr(data-after-unfold);
 				}
 				&:checked ~ span::after {
