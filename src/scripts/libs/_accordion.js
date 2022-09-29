@@ -27,8 +27,6 @@ function toggleCheckbox(e) {
 }
 
 function setUpInfoAccordion(target, accordion) {
-	console.log(target)
-
 	let targetAccordion = undefined
 
 	if (target.matches("label.label")) {

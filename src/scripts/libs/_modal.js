@@ -1,10 +1,6 @@
 const modalEl = document.querySelector("[data-modal]")
 const modalBgEl = document.querySelector("[data-modal-bg]")
 
-if (!modalEl) {
-	console.log(modalEl)
-}
-
 const closeModalBtn = modalEl.querySelector("[data-close-modal-btn]")
 const form = modalEl.querySelector("form.form")
 const successNotification = document.querySelector("[data-notification]")
@@ -33,9 +29,7 @@ function successModal() {
 	event.preventDefault()
 	closeModal()
 	successNotification.classList.add("show")
-	console.log("before")
 	setTimeout(() => {
-		console.log("in")
 		successNotification.classList.remove("show")
 	}, 3000)
 }

@@ -47,7 +47,6 @@ function clearItems() {
 	const items = Array.from(
 		searchFieldResultsContainer.querySelectorAll(".search-field__list")
 	)
-	console.log(items)
 	items.forEach((item) => item.remove())
 }
 

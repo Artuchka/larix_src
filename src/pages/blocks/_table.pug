@@ -1,2 +1,14 @@
 mixin table(_table)
     table.table
+        tr
+            each header in _table.headers
+                th= header
+        each data in _table.data
+            tr 
+                td.size= data.size 
+                td.name= data.name 
+                td.sort= data.sort 
+                td.price= data.price 
+                td.button
+                    +button(data.buttonText, 'button')
+        
